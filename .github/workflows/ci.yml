@@ -1,0 +1,43 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  test:
+    name: typecheck, unit, e2e
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      # node:sqlite is still flagged experimental on Node 22; keep CI logs clean.
+      NODE_OPTIONS: --no-warnings=ExperimentalWarning
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+
+      - name: End-to-end demo (headless)
+        run: npm run test:e2e
+
+      - name: Build
+        run: npm run build
