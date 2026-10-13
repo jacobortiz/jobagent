@@ -1,0 +1,34 @@
+{
+  "name": "jobagent",
+  "version": "0.1.0",
+  "description": "An open-source auto-apply agent: discovers job postings, scores fit with Claude, tailors materials, fills ATS application forms with Playwright, and tracks everything in SQLite. Human review before every submission.",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "bin": {
+    "jobagent": "./bin/jobagent.js"
+  },
+  "scripts": {
+    "jobagent": "tsx src/cli.ts",
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "test:e2e": "vitest run --config vitest.e2e.config.ts",
+    "demo": "tsx src/cli.ts demo"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.133.0",
+    "commander": "^15.0.0",
+    "playwright": "1.56.1",
+    "yaml": "^2.9.1",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.6.0",
+    "vitest": "^5.0.0"
+  }
+}

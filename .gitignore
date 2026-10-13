@@ -1,0 +1,8 @@
+node_modules/
+dist/
+data/
+config/profile.yaml
+config/sources.yaml
+config/answers.yaml
+.env
+*.log

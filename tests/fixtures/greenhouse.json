@@ -1,0 +1,31 @@
+{
+  "jobs": [
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/acme/jobs/4001",
+      "internal_job_id": 9001,
+      "location": { "name": "Austin, Texas, United States" },
+      "metadata": [{ "id": 1, "name": "Employment Type", "value": "Full-time", "value_type": "single_select" }],
+      "id": 4001,
+      "updated_at": "2026-10-01T12:00:00-04:00",
+      "first_published": "2026-09-28T09:00:00-04:00",
+      "requisition_id": "R-1",
+      "title": "Senior Backend Engineer",
+      "content": "&lt;p&gt;We build &amp;amp; ship the &lt;strong&gt;control plane&lt;/strong&gt;.&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Go&lt;/li&gt;&lt;li&gt;Postgres&lt;/li&gt;&lt;/ul&gt;",
+      "departments": [{ "id": 1, "name": "Engineering" }],
+      "offices": [{ "id": 1, "name": "Austin", "location": "Austin, TX" }]
+    },
+    {
+      "absolute_url": "https://job-boards.greenhouse.io/acme/jobs/4002#app",
+      "internal_job_id": 9002,
+      "location": { "name": "Remote - US" },
+      "metadata": [],
+      "id": 4002,
+      "updated_at": "2026-10-02T12:00:00-04:00",
+      "title": "Engineering Manager, Platform",
+      "content": "&lt;p&gt;Lead a team.&lt;/p&gt;",
+      "departments": [],
+      "offices": []
+    }
+  ],
+  "meta": { "total": 2 }
+}

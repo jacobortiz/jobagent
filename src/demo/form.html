@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Acme Robotics — Senior Backend Engineer</title>
+<style>
+  body { font-family: system-ui, sans-serif; max-width: 720px; margin: 2rem auto; padding: 0 1rem; color: #222; }
+  h1 { font-size: 1.5rem; }
+  fieldset { border: 1px solid #ddd; border-radius: 8px; margin: 1.25rem 0; padding: 1rem; }
+  legend { font-weight: 600; padding: 0 .4rem; }
+  .field { margin: .9rem 0; }
+  label.q { display: block; font-weight: 500; margin-bottom: .3rem; }
+  input[type=text], input[type=email], input[type=tel], input[type=url], select, textarea { width: 100%; padding: .5rem; border: 1px solid #bbb; border-radius: 6px; font: inherit; box-sizing: border-box; }
+  textarea { min-height: 110px; }
+  .req::after { content: " *"; color: #c00; }
+  .hint { color: #666; font-size: .85rem; }
+  .combo { position: relative; }
+  .combo ul { position: absolute; left: 0; right: 0; top: 100%; margin: 0; padding: 0; list-style: none; background: #fff; border: 1px solid #bbb; border-radius: 6px; max-height: 180px; overflow: auto; z-index: 2; display: none; }
+  .combo ul li { padding: .4rem .6rem; cursor: pointer; }
+  .combo ul li:hover, .combo ul li[aria-selected=true] { background: #eef; }
+  .file-input { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+  button.attach { padding: .4rem .8rem; }
+  .error { color: #c00; font-size: .85rem; margin-top: .2rem; display: none; }
+  .invalid .error { display: block; }
+  button[type=submit] { background: #2458d6; color: #fff; border: 0; padding: .7rem 1.4rem; font-size: 1rem; border-radius: 6px; cursor: pointer; }
+</style>
+</head>
+<body>
+<h1>Senior Backend Engineer</h1>
+<p class="hint">Acme Robotics · Austin, TX or Remote (US)</p>
+<p>We build the control plane for warehouse robots. You will own ingestion pipelines and the APIs our fleet depends on.</p>
+
+<h2>Apply for this job</h2>
+<form id="application" novalidate>
+  <fieldset>
+    <legend>Your information</legend>
+    <div class="field"><label class="q req" for="first_name">First Name</label><input type="text" id="first_name" name="first_name" required autocomplete="given-name" /><div class="error">Required</div></div>
+    <div class="field"><label class="q req" for="last_name">Last Name</label><input type="text" id="last_name" name="last_name" required autocomplete="family-name" /><div class="error">Required</div></div>
+    <div class="field"><label class="q req" for="email">Email</label><input type="email" id="email" name="email" required autocomplete="email" /><div class="error">Required</div></div>
+    <div class="field"><label class="q req" for="phone">Phone</label><input type="tel" id="phone" name="phone" required autocomplete="tel" /><div class="error">Required</div></div>
+
+    <div class="field">
+      <label class="q req" for="resume_btn">Resume/CV</label>
+      <button type="button" class="attach" id="resume_btn" onclick="document.getElementById('resume').click()">Attach</button>
+      <span id="resume_name" class="hint">No file chosen</span>
+      <input type="file" id="resume" name="resume" class="file-input" accept=".pdf,.doc,.docx,.txt" required aria-label="Resume/CV" />
+      <div class="error">Required</div>
+    </div>
+
+    <div class="field"><label class="q" for="cover_letter">Cover Letter</label><textarea id="cover_letter" name="cover_letter"></textarea></div>
+    <div class="field"><label class="q" for="linkedin">LinkedIn Profile</label><input type="url" id="linkedin" name="linkedin" /></div>
+    <div class="field"><label class="q" for="website">Website</label><input type="url" id="website" name="website" /></div>
+
+    <div class="field combo">
+      <label class="q req" for="location">Location (City)</label>
+      <input type="text" id="location" name="location" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-controls="location_list" autocomplete="off" required />
+      <ul id="location_list" role="listbox"></ul>
+      <div class="error">Required</div>
+    </div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Additional questions</legend>
+    <div class="field">
+      <label class="q" for="source">How did you hear about this job?</label>
+      <select id="source" name="source">
+        <option value="">Select...</option>
+        <option value="linkedin">LinkedIn</option>
+        <option value="website">Company website</option>
+        <option value="referral">Employee referral</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="field" role="radiogroup" aria-labelledby="auth_label">
+      <span class="q req" id="auth_label">Are you legally authorized to work in the United States?</span>
+      <label><input type="radio" name="authorized" value="yes" required /> Yes</label>
+      <label><input type="radio" name="authorized" value="no" /> No</label>
+      <div class="error">Required</div>
+    </div>
+
+    <div class="field" role="radiogroup" aria-labelledby="sponsor_label">
+      <span class="q req" id="sponsor_label">Will you now or in the future require sponsorship for employment visa status?</span>
+      <label><input type="radio" name="sponsorship" value="yes" required /> Yes</label>
+      <label><input type="radio" name="sponsorship" value="no" /> No</label>
+      <div class="error">Required</div>
+    </div>
+
+    <div class="field">
+      <label class="q" for="experience">How many years of professional software engineering experience do you have?</label>
+      <select id="experience" name="experience">
+        <option value="">Select...</option>
+        <option value="0-2">0-2 years</option>
+        <option value="3-5">3-5 years</option>
+        <option value="6-9">6-9 years</option>
+        <option value="10+">10+ years</option>
+      </select>
+    </div>
+
+    <div class="field"><label class="q req" for="why">Why do you want to work at Acme Robotics?</label><textarea id="why" name="why" required></textarea><div class="error">Required</div></div>
+    <div class="field"><label class="q" for="salary">What are your salary expectations?</label><input type="text" id="salary" name="salary" /></div>
+    <div class="field"><label class="q" for="start">When could you start?</label><input type="text" id="start" name="start" /></div>
+  </fieldset>
+
+  <fieldset>
+    <legend>Voluntary Self-Identification</legend>
+    <p class="hint">Completion is voluntary and will not affect your application.</p>
+    <div class="field"><label class="q" for="gender">Gender</label>
+      <select id="gender" name="gender"><option value="">Select...</option><option>Male</option><option>Female</option><option>Non-binary</option><option>Decline To Self Identify</option></select></div>
+    <div class="field"><label class="q" for="race">Race</label>
+      <select id="race" name="race"><option value="">Select...</option><option>Asian</option><option>Black or African American</option><option>Hispanic or Latino</option><option>White</option><option>Two or More Races</option><option>Decline To Self Identify</option></select></div>
+    <div class="field"><label class="q" for="veteran">Veteran Status</label>
+      <select id="veteran" name="veteran"><option value="">Select...</option><option>I am not a protected veteran</option><option>I identify as one or more of the classifications of a protected veteran</option><option>I don't wish to answer</option></select></div>
+    <div class="field" role="radiogroup" aria-labelledby="dis_label">
+      <span class="q" id="dis_label">Disability Status</span>
+      <label><input type="radio" name="disability" value="yes" /> Yes, I have a disability (or previously had a disability)</label><br/>
+      <label><input type="radio" name="disability" value="no" /> No, I don't have a disability</label><br/>
+      <label><input type="radio" name="disability" value="decline" /> I don't wish to answer</label>
+    </div>
+  </fieldset>
+
+  <div class="field"><label><input type="checkbox" id="updates" name="updates" value="yes" /> Keep me updated about future opportunities at Acme</label></div>
+  <div class="field"><label><input type="checkbox" id="privacy" name="privacy" value="yes" required /> <span class="req">I agree to the privacy policy and confirm the information above is accurate</span></label><div class="error">Required</div></div>
+
+  <button type="submit">Submit Application</button>
+</form>
+
+<div id="done" style="display:none">
+  <h2>Thank you for applying to Acme Robotics!</h2>
+  <p>We have received your application and will be in touch.</p>
+</div>
+
+<script>
+  const CITIES = ["Austin, Texas, United States", "Boston, Massachusetts, United States", "Chicago, Illinois, United States", "Denver, Colorado, United States", "New York, New York, United States", "San Francisco, California, United States", "Seattle, Washington, United States", "Remote, United States"];
+  const loc = document.getElementById("location");
+  const list = document.getElementById("location_list");
+  let chosen = "";
+  function renderList() {
+    const q = loc.value.toLowerCase();
+    const matches = CITIES.filter((c) => c.toLowerCase().includes(q));
+    list.innerHTML = matches.map((c) => `<li role="option">${c}</li>`).join("");
+    list.style.display = matches.length && q ? "block" : "none";
+    loc.setAttribute("aria-expanded", list.style.display === "block");
+  }
+  loc.addEventListener("input", () => { chosen = ""; renderList(); });
+  loc.addEventListener("focus", renderList);
+  list.addEventListener("mousedown", (e) => {
+    if (e.target.tagName === "LI") { chosen = e.target.textContent; loc.value = chosen; list.style.display = "none"; }
+  });
+  document.addEventListener("click", (e) => { if (!e.target.closest(".combo")) list.style.display = "none"; });
+
+  const resume = document.getElementById("resume");
+  resume.addEventListener("change", () => { document.getElementById("resume_name").textContent = resume.files[0] ? resume.files[0].name : "No file chosen"; });
+
+  const form = document.getElementById("application");
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    let ok = true;
+    form.querySelectorAll(".field").forEach((f) => {
+      const req = f.querySelector("[required]");
+      if (!req) return;
+      let filled;
+      if (req.type === "radio") filled = !!form.querySelector(`input[name="${req.name}"]:checked`);
+      else if (req.type === "checkbox") filled = req.checked;
+      else if (req.type === "file") filled = req.files.length > 0;
+      else filled = !!req.value.trim();
+      if (req.id === "location" && !CITIES.includes(req.value)) filled = false;
+      f.classList.toggle("invalid", !filled);
+      if (!filled) ok = false;
+    });
+    if (!ok) return;
+    const data = {};
+    new FormData(form).forEach((v, k) => { data[k] = v instanceof File ? (v.name || null) : v; });
+    data.resume = resume.files[0] ? resume.files[0].name : null;
+    await fetch("/submit", { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(data) });
+    form.style.display = "none";
+    document.getElementById("done").style.display = "block";
+  });
+</script>
+</body>
+</html>

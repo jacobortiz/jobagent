@@ -1,0 +1,23 @@
+# Job boards to poll. Copy to config/sources.yaml and edit.
+#
+# All three sources expose public, documented JSON endpoints, so no scraping or login is
+# needed:
+#   greenhouse:  https://boards-api.greenhouse.io/v1/boards/<slug>/jobs?content=true
+#   lever:       https://api.lever.co/v0/postings/<slug>?mode=json
+#   ashby:       https://api.ashbyhq.com/posting-api/job-board/<slug>
+#
+# Find the slug in the company's careers URL, e.g.
+#   https://boards.greenhouse.io/stripe            -> slug: stripe
+#   https://jobs.lever.co/figma                    -> slug: figma
+#   https://jobs.ashbyhq.com/linear                -> slug: linear
+
+sources:
+  - type: greenhouse
+    slug: stripe
+    company: Stripe
+  - type: lever
+    slug: figma
+    company: Figma
+  - type: ashby
+    slug: linear
+    company: Linear

@@ -1,0 +1,29 @@
+{
+  "apiVersion": "1",
+  "jobs": [
+    {
+      "id": "11111111-2222-3333-4444-555555555555",
+      "title": "Backend Engineer",
+      "department": "Engineering",
+      "team": "Core",
+      "employmentType": "FullTime",
+      "location": "Remote",
+      "secondaryLocations": [{ "location": "New York, NY" }],
+      "publishedAt": "2026-10-05T00:00:00.000Z",
+      "isListed": true,
+      "isRemote": true,
+      "descriptionHtml": "<h2>About</h2><p>We make tools.</p>",
+      "descriptionPlain": "About\nWe make tools.",
+      "jobUrl": "https://jobs.ashbyhq.com/acme/11111111-2222-3333-4444-555555555555",
+      "applyUrl": "https://jobs.ashbyhq.com/acme/11111111-2222-3333-4444-555555555555/application",
+      "compensation": { "compensationTierSummary": "$180K – $220K • Offers Equity", "scrapeableCompensationSalarySummary": "$180K - $220K" }
+    },
+    {
+      "id": "unlisted",
+      "title": "Hidden Role",
+      "isListed": false,
+      "location": "Remote",
+      "jobUrl": "https://jobs.ashbyhq.com/acme/unlisted"
+    }
+  ]
+}

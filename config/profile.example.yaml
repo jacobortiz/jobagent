@@ -1,0 +1,96 @@
+# jobagent profile — copy to config/profile.yaml and fill in.
+# Everything the agent knows about you lives here. Nothing is sent anywhere except to
+# the Claude API (for scoring / form planning) and to the application forms you approve.
+
+candidate:
+  first_name: Jane
+  last_name: Doe
+  email: jane.doe@example.com
+  phone: "+1 512 555 0100"
+  location:
+    city: Austin
+    state: TX
+    country: United States
+    postal_code: "78701"
+  linkedin: https://www.linkedin.com/in/janedoe
+  github: https://github.com/janedoe
+  portfolio: https://janedoe.dev
+  current_title: Senior Software Engineer
+  current_company: Example Corp
+  years_of_experience: 7
+
+documents:
+  # Paths are relative to the config/ directory.
+  resume_pdf: ../documents/resume.pdf
+  # Either a path to a .md/.txt file or the resume text inline.
+  resume_text: ../documents/resume.md
+  cover_letter_template: |
+    I'm a backend engineer who likes owning systems end to end. Keep letters concrete,
+    friendly, and under 250 words. Never claim skills that are not in my resume.
+
+work_authorization:
+  authorized_countries: [United States]
+  requires_sponsorship: false
+  willing_to_relocate: false
+
+preferences:
+  titles_include:
+    - software engineer
+    - backend engineer
+    - platform engineer
+    - staff engineer
+  titles_exclude:
+    - intern
+    - manager
+    - director
+    - sales
+    - recruiter
+  keywords_exclude:
+    - clearance required
+    - unpaid
+  locations:
+    - Remote
+    - Austin, TX
+    - "Austin, Texas"
+  remote: preferred          # required | preferred | any | no
+  employment_types: [full-time]
+  min_salary: 150000
+  max_posting_age_days: 45
+  min_fit_score: 70          # 0-100; jobs at/above this are queued to apply
+  seniority: [senior, staff]
+  narrative: |
+    Looking for a senior/staff backend role at a product company, ideally working on
+    infrastructure, data pipelines, or developer tooling. Prefer small-to-mid-size teams.
+
+blocked_companies:
+  - Example Corp
+
+screening:
+  salary_expectation: "$170,000 base, flexible depending on equity and total comp"
+  start_date: "Two weeks after offer"
+  notice_period: "2 weeks"
+  how_did_you_hear: Company website
+  previously_employed_here: false
+  over_18: true
+  eeo:
+    gender: Decline to self-identify
+    race: Decline to self-identify
+    hispanic_latino: Decline to self-identify
+    veteran: I don't wish to answer
+    disability: I don't wish to answer
+
+# Reusable answers to common free-form questions. Matched by fuzzy question similarity.
+custom_answers:
+  - question: Why do you want to work here?
+    answer: >
+      I'm drawn to teams that ship reliable infrastructure for real users. Your product's
+      focus on developer experience matches where I've had the most impact.
+  - question: What is your desired salary?
+    answer: "$170,000 base, flexible depending on equity and total comp"
+
+model:
+  scoring: claude-opus-5-5
+  planning: claude-opus-5-5
+  scoring_effort: high
+  planning_effort: medium
+  concurrency: 3

@@ -1,0 +1,27 @@
+[
+  {
+    "id": "7f1c2a3b-0000-4000-8000-000000000001",
+    "text": "Staff Software Engineer, Infrastructure",
+    "categories": { "commitment": "Full-time", "department": "Engineering", "location": "San Francisco, CA", "team": "Infrastructure", "allLocations": ["San Francisco, CA", "Remote"] },
+    "description": "<div>We are hiring.</div>",
+    "descriptionPlain": "We are hiring.",
+    "lists": [{ "text": "What you'll do", "content": "<li>Build systems</li><li>Mentor</li>" }],
+    "additional": "<div>Pay range: $200k-$250k</div>",
+    "additionalPlain": "Pay range: $200k-$250k",
+    "hostedUrl": "https://jobs.lever.co/acme/7f1c2a3b-0000-4000-8000-000000000001",
+    "applyUrl": "https://jobs.lever.co/acme/7f1c2a3b-0000-4000-8000-000000000001/apply",
+    "createdAt": 1759276800000,
+    "workplaceType": "hybrid",
+    "salaryRange": { "min": 200000, "max": 250000, "currency": "USD", "interval": "per-year-salary" }
+  },
+  {
+    "id": "7f1c2a3b-0000-4000-8000-000000000002",
+    "text": "Sales Development Representative",
+    "categories": { "commitment": "Full-time", "department": "Sales", "location": "Remote" },
+    "description": "<p>Sell.</p>",
+    "lists": [],
+    "hostedUrl": "https://jobs.lever.co/acme/7f1c2a3b-0000-4000-8000-000000000002",
+    "createdAt": 1750000000000,
+    "workplaceType": "remote"
+  }
+]
