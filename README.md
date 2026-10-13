@@ -1,5 +1,7 @@
 # jobagent
 
+[![CI](https://github.com/jacobortiz/jobagent/actions/workflows/ci.yml/badge.svg)](https://github.com/jacobortiz/jobagent/actions/workflows/ci.yml)
+
 An open-source take on the "AI applies to jobs for you" idea, built so that **you stay in control**: it discovers postings from public job-board APIs, asks Claude how well each one fits you, writes a tailored summary and cover letter, fills the application form in a real browser, and then **stops and shows you everything before anything is submitted**.
 
 ```
